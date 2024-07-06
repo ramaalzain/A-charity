@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جمعية البر والإحسان</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet" />
+</head>
+
+<section class="addpro">
+    <div class="container text-center " id="addpro">
+        <legend dir="rtl" class="text-success fw-bold">معلومات المشروع</legend>
+        <div class="row">
+
+            <form class="col-lg-6 text-center text-sm-center m-auto  form" dir="rtl" id="form">
+                <div class="rr ph offset col-lg-6 col-md-6 col-sm-6  mt-4 inp">
+                   <img src="img/p1.jpeg" width="150px" height="150px" id="profile-pic">
+                   <label for="input-file" class="update-img">تحديث الصورة</label>
+                    <input dir="rtl" type="file" accept="img/jpeg ,img/png , img/jpg  " id="input-file" >
+                    <br>
+                </div>
+                <div class="rr col-lg-12 col-md-6 col-sm-6 mb-3 mt-3 ">
+                    <label for="name">اسم المشروع</label>
+                    <input dir="rtl" type="text" id="nameInput">
+                    <span id="nameError"></span>
+                    <br>
+                </div>
+
+                <div class="rr col-lg-12 col-md-6 col-sm-6 mb-3 mt-3 ">
+                    <div class="offset1">
+                        <label for="num">اسم الفرع </label>
+                        <select name="type" id="departments">
+                            <!-- <option> </option>
+                            <option> حلب الجديدة شمالي</option>
+                            <option> قاضي عسكر</option> -->
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="rr col-lg-12 col-md-6 col-sm-6 mb-3 mt-3 ">
+                    <div class="offset">
+                        <lable for="type">نوع المشروع</lable>
+
+                        <select name="type" id="types">
+                            <!-- <option> </option>
+                            <option>دائم </option>
+                            <option>مؤقت </option> -->
+                        </select>
+                    </div>
+                    <br>
+                </div>
+                <div class="rr col-lg-12 col-md-6 col-sm-6 mb-3 mt-3 ">
+                    <div class="offset1">
+                        <lable for="type"> تاريخ البداية</lable>
+                        <input type="date" id="dateInput1">
+                        <span id="dateE"></span>
+                    </div>
+
+                    <br>
+                </div>
+                <div class="rr col-lg-12 col-md-6 col-sm-6 mb-3 mt-3 ">
+                    <div class="offset1">
+                        <lable for="type"> تاريخ النهاية</lable>
+                        <input type="date" id="dateInput2">
+                        <span id="dateError2"></span>
+                    </div>
+
+                    <br>
+                </div>
+                <div class="rr ph col-lg-12 col-md-6 col-sm-6 mb-3 mt-3 ">
+                    <div class="offset1">
+                        <lable for="type">وصف المشروع</lable>
+                        <textarea name="" id="desc" cols="20" rows="2"></textarea>
+                        <span id="descError"></span>
+                    </div>
+
+                    <br>
+                </div>
+
+                <div class="message">
+                    <div class="success" id="success">تمت العملية بنجاح</div>
+                    <div class="danger" id="danger">الحقول لا يجب أن تكون فارغة </div>
+                    <div class="namemsg" id="namemsg">اسم المشروع لا يجب أن يتجاوز 10 أحرف'</div>
+                    <div class="datemsg" id="datemsg"> التاريخ لا يجب أن يتجاوز 2030</div>
+                    <div class="datemsg2" id="datemsg2"> تاريخ البداية يسبق تاريخ النهاية </div>
+                    <div class="descmsg" id="descmsg"> لا يجب أن يتجاوز 2000 حرف </div>
+
+                </div>
+            </form>
+            <div class="button">
+                <button id="send" onclick="message()">حفظ</button>
+                <button onclick="form.submit() ">   حفظ  التعديلات </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="js/addpro.js"></script>
+<script src="js/updateProject.js"></script>
+<script>
+    let profilePic = document.getElementById("profile-pic");
+    let inputFile = document.getElementById("input-file");
+
+    inputFile.onchange = function()
+    {
+        profilePic.src = URL.createObjectURL(inputFile.files[0]);
+    }
+</script>
+
+</html>
